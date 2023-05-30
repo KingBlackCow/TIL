@@ -56,3 +56,55 @@ kubectl get service
 kubectl delete -f nginx-service.yaml
 kubectl delete -f nginx-deployment.yaml
 eksctl delete cluster --region ap-northeast-2 --name=mission-cluster
+
+---
+
+```
+apiVersion
+: apps/v1
+kind: Deployment
+metadata:
+name:
+elasticsearch
+labels:
+app:
+elasticsearch
+spec:
+replicas: 1
+selector:
+matchLabels
+app:
+elasticsearch
+template:
+metadata:
+labels:
+app:
+elasticsearch
+spec:
+containers:
+-
+name: elasticsearch
+image: elastic/elasticsearch:6.4.0
+env:
+-
+name: discovery.type
+value: "single
+node"
+ports:
+-
+containerPort : 9200
+-
+containerPort : 9300
+---
+apiVersion
+: v1
+kind: Service
+metadata:
+labels:
+app:
+elasticsearch
+name:
+elasticsearch svc
+namespace: default
+spec:
+```
