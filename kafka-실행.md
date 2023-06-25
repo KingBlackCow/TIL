@@ -26,18 +26,18 @@ bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
 
 4. 테스트 편의를 위한 host 설정
 
-   ``` 
-   sudo vi /etc/hosts
-   127.0.0.1 my-kafka // 추가
-   ```
+``` 
+sudo vi /etc/hosts
+127.0.0.1 my-kafka // 추가
+```
 
 5. 토픽생성
 
-   ```
-   bin/kafka-topics.sh --create \ 
-   --bootstrap-server my-kafka:9092 \ 
-   --topic ${카프카이름}
-   ```
+```
+bin/kafka-topics.sh --create \ 
+--bootstrap-server my-kafka:9092 \ 
+--topic ${카프카이름}
+```
 
 5-1. describe 옵션(상태정보확인 파티션 개수, 레플리카 개수, config 등)
 
@@ -74,8 +74,8 @@ bin/kafka-topics.sh --bootstrap-server my-kafka:9092 --topic test --alter --part
 
 6. 토픽삭제
 
-   ```
-   bin/kafka-topics.sh --bootstrap-server my-kafka:9092 --topic ${토픽이름} --delete
-   ```
+```
+bin/kafka-topics.sh --bootstrap-server my-kafka:9092 --topic ${토픽이름} --delete
+```
 
    
