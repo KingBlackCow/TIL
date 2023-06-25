@@ -78,4 +78,20 @@ bin/kafka-topics.sh --bootstrap-server my-kafka:9092 --topic test --alter --part
 bin/kafka-topics.sh --bootstrap-server my-kafka:9092 --topic ${토픽이름} --delete
 ```
 
+7. 카프카 config.sh 설정 변경하기
+  - min.insync.replicas는 최소한으로 동기화되어야 하는 복제본 수를 나타내는 옵션, 해당 옵션을 추가
+
+   ```
+   bin/kafka-configs.sh  --bootstrap-server my-kafka:9092 --alter --add-config min.insync.replicas=2 --topic test
+   ```
+   
+
+7-1. 카프카 브로커 옵션값 확인
+   
+   ```
+   bin/kafka-configs.sh --bootstrap-server my-kafka:9092 --broker 0 --all --describe
+   ```
+
+
+
    
