@@ -38,3 +38,12 @@
 - Pod IP는 컨테이너와 공유되기 때문에 컨테이너 간 포트 충돌을 주의해야 한다 
 - 하나의 Pod에 속한 컨테이너들은 localhost로 통신할 수 있다. 
 - 다른 Pod(컨테이너)과 통신은 Pod IP를 이용한다
+
+### Label과 Selector 
+
+- 쿠버네티스 오브젝트 metadata.labels 속성으로 리소스에 Label을 추가할 수 있다. 
+- Label은 key/value 쌍으로 선언한다. 
+- 쿠버네티스 오브젝트에 선언한 Label의 key, value를 기준으로 원하는 리소스를 필터링할 수 있다. 
+- 필터링 하기 위한 조건을 Selector로 정의한다. (label query) 
+- 즉 Label과 Selector를 사용하면 특정 리소스들의 집합을 구할 수 있다. 
+- kubectl get 명령어를 사용할 때 label query를 지정하기 위해 --selector 또는 ‒l 옵션을 사용한다
